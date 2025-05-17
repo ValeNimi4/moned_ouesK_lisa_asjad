@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>ÕK ilm</title>
+<style>
+body {font-family: 'Caveat', cursive; background-color: green; background-size: 50px, 50px;} a {font-style: normal; color: darkblue;}</style>
+</head>
+<body>
+    <p>NB! ÕK Ilm on Tartu ilma kohta</p>
+    <a href="https://oueskaija.wordpress.com">ÕK koduleht</a>
+    <p id="ilm">Laen</p>
+    <script>
+    let spordid = [];
+        fetch("https://api.open-meteo.com/v1/forecast?latitude=58.378025&longitude=26.728493&current=temperature_2m,wind_speed_10m")
+      .then(res => res.json())
+      .then(data => {
+        const tuul = data.current.wind_speed_10m;
+        const temp = data.current.temperature_2m;
+        if (temp > 20) {
+            spordid.push("<li>Saab ujuda</li>")}
+        if (temp > 12 && tuul < 15) {
+            spordid.push("<li>Saab süstaga sõita</li>");}
+        if (temp > 0) {
+            spordid.push("<li>Saab jalgpalli mängida</li>");
+            spordid.push("<li>Saab jalgrattaga sõita</li>");}
+        document.getElementById("ilm").innerHTML = "Temperatuur on " + temp + "°C" + "<br><ul>" + spordid.join("") + "</ul>";
+      })
+      .catch(err => {
+        document.getElementById("ilm").innerHTML = "Viga ilma laadimisel";
+        console.error(err);
+      });
+</script></body></html>
