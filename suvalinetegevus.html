@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>ÕK Suvaline tegevus</title>
+<style>
+body {font-family: 'Caveat', cursive; background-color: green; background-size: 50px, 50px;} a {font-style: normal; color: darkblue;}</style>
+</head>
+<body>
+<br>
+<a href="https://oueskaija.wordpress.com">ÕK koduleht</a><br>
+<p id="tegevus"></p>
+<script>
+    let spordid = ["Mängi jalgpalli", "Jaluta metsas", "Tee puuonni", "Jaluta õues", "Sõida jalgrattaga"];
+    document.getElementById("tegevus").innerHTML = spordid[Math.floor(Math.random() * spordid.length)];
+</script>
