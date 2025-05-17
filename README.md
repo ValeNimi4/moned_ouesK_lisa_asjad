@@ -1,1 +1,1 @@
-Need siin on veebilehe [õueskäija](oueskaija.wordpress.com) lisaasjad.
+Need siin on veebilehe [õueskäija](https://oueskaija.wordpress.com) lisaasjad.
