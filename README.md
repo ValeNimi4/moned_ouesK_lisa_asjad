@@ -1,1 +1,1 @@
-# moned_ouesK_lisa_asjad
+Need siin on veebilehe [õueskäija](oueskaija.wordpress.com) lisaasjad.
