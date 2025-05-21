@@ -2,11 +2,12 @@
 <html>
 <head><title>ÕK ilm</title>
 <style>
-body {font-family: 'Caveat', cursive; background-color: green; background-size: 50px, 50px;} a {font-style: normal; color: darkblue;}</style>
+body {font-family: 'Caveat', cursive; background-color: green;} a {font-style: normal; color: darkblue;}</style>
 </head>
 <body>
+	<h1 id="suurtekst"></h1>
     <p>NB! ÕK Ilm on Tartu ilma kohta</p>
-    <a href="https://oueskaija.wordpress.com">ÕK koduleht</a>
+    <a onclick='window.location.assign("https://oueskaija.wordpress.com")'>ÕK koduleht</a>
     <p id="ilm">Laen</p>
     <script>
     let spordid = [];
@@ -22,10 +23,12 @@ body {font-family: 'Caveat', cursive; background-color: green; background-size: 
         if (temp > 0) {
             spordid.push("<li>Saab jalgpalli mängida</li>");
             spordid.push("<li>Saab jalgrattaga sõita</li>");}
-        if (temp < 0) {
+        if (temp <= 0) {
             spordid.push("<li>Saab uisutada</li>")
-            spordid.push("<li>Saab suusatada</li>")}
+            spordid.push("<li>Saab suusatada</li>")
+            spordid.push("<li>Saab lumega mängida</li>")}
         document.getElementById("ilm").innerHTML = "Temperatuur on " + temp + "°C" + "<br><ul>" + spordid.join("") + "</ul>";
+      document.getElementById("suurtekst").innerHTML = spordid[Math.floor(Math.random() * spordid.length)].replace(/<[^>]*>/g, '');
       })
       .catch(err => {
         document.getElementById("ilm").innerHTML = "Viga ilma laadimisel";
